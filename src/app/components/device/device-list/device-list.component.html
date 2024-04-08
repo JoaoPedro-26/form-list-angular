@@ -1,0 +1,38 @@
+<div class="container login-container">
+  <div class="col-11">
+    <h1>Todos os produtos cadastrados</h1>
+
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Fabricante</th>
+            <th>Modelo</th>
+            <th>Preço</th>
+            <th>Editar/Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let device of devices">
+            <td>{{ device.descricao }}</td>
+            <td>{{ device.fabricante }}</td>
+            <td>{{ device.modelo }}</td>
+            <td>{{ device.preco }}</td>
+            <td>
+              <button mat-icon-button (click)="editDevice(device)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button (click)="deleteDevice(device)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button class="btn btn-primary" (click)="goToForm()">Voltar para o formulário</button>
+  </div>
+</div>
+

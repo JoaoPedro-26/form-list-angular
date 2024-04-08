@@ -1,0 +1,30 @@
+<div class="container login-container">
+  <form [formGroup]="form" (submit)="onSubmit()" class="col-md-6 w-75">
+    <h1 class="text-center">Cadastre o seu dispositivo</h1>
+
+    <div>
+      <label for="descricao">Descrição:</label>
+      <input type="text" id="descricao" formControlName="descricao" class="form-control" placeholder="Digite a descrição">
+    </div>
+
+    <div>
+      <label for="fabricante" class="mt-2">Fabricante:</label>
+      <input type="text" id="fabricante" formControlName="fabricante" class="form-control" placeholder="Digite o fabricante">
+    </div>
+
+    <div>
+      <label for="modelo" class="mt-2">Modelo:</label>
+      <input type="text" id="modelo" formControlName="modelo" class="form-control" placeholder="Digite o modelo">
+    </div>
+
+    <div>
+      <label for="preco" class="mt-2">Preço:</label>
+      <input type="number" id="preco" formControlName="preco" class="form-control" placeholder="Digite o preço">
+    </div>
+
+    <div class="mt-4">
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">{{ isEditing ? 'Editar Dispositivo' : 'Cadastrar Dispositivo' }}</button>
+    </div>
+
+  </form>
+</div>
